@@ -32,23 +32,31 @@ int main() {
 
 
     // While 'ESC' key not pressed, take in arrow key inputs
+    // Also allow wasd
     // Update player accordingly
     bool not_quit = true;
-    int c,ex;
+    int c;
     while(not_quit)
     {
-        c = getch();
-        switch(ex = getch())
+        switch(c = getch())
         {
+            case 'W':
+            case 'w':
             case KEY_UP:
                 p.UpdatePlayer(0);
                 break;
+            case 'S':
+            case 's':
             case KEY_DOWN:
                 p.UpdatePlayer(2);
                 break;
+            case 'A':
+            case 'a':
             case KEY_LEFT:
                 p.UpdatePlayer(3);
                 break;
+            case 'D':
+            case 'd':
             case KEY_RIGHT:
                 p.UpdatePlayer(1);
                 break;
