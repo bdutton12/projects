@@ -1,4 +1,7 @@
-#include "player.h"
+#include <iostream>
+#include <vector>
+#include <utility>
+#include <conio.h>
 
 class Maze {
     private:

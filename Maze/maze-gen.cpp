@@ -1,12 +1,6 @@
 #include "maze-gen.h"
 #include <time.h>
 
-#define KEY_UP    72
-#define KEY_LEFT  75
-#define KEY_RIGHT 77
-#define KEY_DOWN  80
-#define ESC 27
-
 // Define maze constructor taking in height,width, and
 // filling array with 1s
 Maze::Maze(int x, int y) {
@@ -96,41 +90,4 @@ void Maze::GenerateMaze(int x, int y) {
                 break;
         }
     }
-}
-
-int main() {
-    Maze m = Maze(30,30);
-    srand(time(0));
-
-    m.GenerateMaze(1,1);
-
-    std::cout << m;
-
-    bool not_quit = true;
-    int c,ex;
-    while(not_quit)
-    {
-        c = getch();
-        switch(ex = getch())
-        {
-            case KEY_UP     /* H */:
-                std::cout << std::endl << "Up" << std::endl;//key up
-                break;
-            case KEY_DOWN   /* K */:
-                std::cout << std::endl << "Down" << std::endl;   // key down
-                break;
-            case KEY_LEFT   /* M */:
-                std::cout << std::endl << "Left" << std::endl;  // key left
-                break;
-            case KEY_RIGHT: /* P */
-                std::cout << std::endl << "Right" << std::endl;  // key right
-                break;
-            case ESC:
-                not_quit = false;
-            default:  // not arrow
-                break;
-        }
-    }
-
-    return 0;
 }
