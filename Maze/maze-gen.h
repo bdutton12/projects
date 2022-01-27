@@ -3,6 +3,13 @@
 #include <utility>
 #include <conio.h>
 
+/*
+Maze class contains:
+4 Directions set to their numerical representation
+Height of maze
+Width of maze
+Vector<Vector<Char>> containing each character of maze
+*/
 class Maze {
     private:
     //Initialize directions

@@ -22,7 +22,7 @@ std::ostream& operator<<(std::ostream& os, Maze& m) {
     return os;
 }
 
-//Check if next coords to visit are in bounds
+// Check if next coords to visit are in bounds
 bool Maze::InBounds(int x, int y) {
     if (x > 0 && x < width-1) {
         if (y > 0 && y < height-1) {
@@ -32,7 +32,7 @@ bool Maze::InBounds(int x, int y) {
     return false;
 }
 
-bool showDirscomputed = true;
+// Recursively generate maze
 void Maze::GenerateMaze(int x, int y) {
     //Set point currently at to empty
     maze_arr[y][x] = ' ';
