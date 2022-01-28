@@ -78,7 +78,7 @@ void Player::UpdatePlayer(int dir) {
     std::cout << *maze;
 
     // Display number of moves
-    std::cout << "Moves: " << moves << std::endl;
+    std::cout << "Moves: " << moves;
 }
 
 // Check if player is at finish point
