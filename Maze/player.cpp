@@ -73,12 +73,6 @@ void Player::UpdatePlayer(int dir) {
     if (maze->maze_arr[maze->height-3][maze->width-3] != 'F' && (coords.first != maze->width-3 || coords.second != maze->height-3)) {
         maze->maze_arr[maze->height-3][maze->width-3] = 'F';
     }
-
-    system("cls");
-    std::cout << *maze;
-
-    // Display number of moves
-    std::cout << "Moves: " << moves;
 }
 
 // Check if player is at finish point

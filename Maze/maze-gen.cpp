@@ -71,7 +71,6 @@ void Maze::GenerateMaze(int x, int y) {
     }
 
     //For each direction, recursively travel until impossible
-    int travelX, travelY = 0;
     for (int i : dirs) {
         switch(i) {
             case 0:

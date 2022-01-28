@@ -23,16 +23,18 @@ class Maze {
     int S = 2;
     int W = 3;
 
-    //Initialize height,width and maze_arr to default size
-    int height = 10;
-    int width = 10;
-    std::vector<std::vector<char>> maze_arr;
-
     bool InBounds(int,int);
 
     friend class Player;
 
     public:
+    //Initialize maze_arr to default size
+    std::vector<std::vector<char>> maze_arr;
+    
+    //  Initialize height, width
+    int height = 10;
+    int width = 10;
+
     Maze(int, int);
     friend std::ostream& operator<<(std::ostream&, Maze&);
     void GenerateMaze(int, int);
