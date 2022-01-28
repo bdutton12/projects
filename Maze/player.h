@@ -1,4 +1,7 @@
-#include "maze-gen.cpp"
+#ifndef PLAYER
+#define PLAYER
+
+#include "maze-gen.h"
 
 /*
 Player class contains:
@@ -19,3 +22,5 @@ class Player {
     bool ValidMove(int, int);
     bool WinState();
 };
+
+#endif

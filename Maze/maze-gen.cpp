@@ -1,6 +1,4 @@
 #include "maze-gen.h"
-#include <time.h>
-#include <windows.h>
 
 // Initialize output console
 HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);

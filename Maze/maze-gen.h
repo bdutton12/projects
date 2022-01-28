@@ -1,7 +1,12 @@
+#ifndef MAZEGEN
+#define MAZEGEN
+
 #include <iostream>
 #include <vector>
 #include <utility>
 #include <conio.h>
+#include <time.h>
+#include <windows.h>
 
 /*
 Maze class contains:
@@ -32,3 +37,5 @@ class Maze {
     friend std::ostream& operator<<(std::ostream&, Maze&);
     void GenerateMaze(int, int);
 };
+
+#endif

@@ -1,4 +1,5 @@
-#include "player.cpp"
+#include "player.h"
+#include "maze-gen.h"
 #include <cctype>
 
 // Define ASCII values for each key press needed
