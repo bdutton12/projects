@@ -11,6 +11,7 @@ class Player {
     std::pair<int,int> coords;
     char rep = 'U';
     Maze* maze;
+    int moves = 0;
     
     public:
     Player(int, int, char, Maze*);

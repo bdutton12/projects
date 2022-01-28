@@ -1,5 +1,9 @@
 #include "maze-gen.h"
 #include <time.h>
+#include <windows.h>
+
+// Initialize output console
+HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);
 
 // Define maze constructor taking in height,width, and
 // filling array with 1s
@@ -11,10 +15,26 @@ Maze::Maze(int x, int y) {
 
 // Define output as outputting each cell separated by " "
 // New rows on new lines
+// Start and finish and player given special color
 std::ostream& operator<<(std::ostream& os, Maze& m) {
     for (int i = 0; i < m.width; i++) {
         for (int j = 0; j < m.height; j++) {
-            os << m.maze_arr[i][j] << " ";
+            switch(m.maze_arr[i][j]) {
+                case '#':
+                case ' ':
+                    SetConsoleTextAttribute(hcon, FOREGROUND_RED | FOREGROUND_GREEN | FOREGROUND_BLUE); // dark gray
+                    os << m.maze_arr[i][j] << " ";
+                    break;
+                case 'S':
+                case 'F':
+                    SetConsoleTextAttribute(hcon, FOREGROUND_GREEN); // green
+                    os << m.maze_arr[i][j] << " ";
+                    break;
+                default:
+                    SetConsoleTextAttribute(hcon, FOREGROUND_BLUE); // dark blue
+                    os << m.maze_arr[i][j] << " ";
+                    break;
+            }
         }
         os << std::endl;
     }

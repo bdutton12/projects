@@ -27,6 +27,7 @@ void Player::UpdatePlayer(int dir) {
 
                 coords.second -= 1;
                 maze->maze_arr[coords.second][coords.first] = rep;
+                moves++;
             }
             break;
 
@@ -36,6 +37,7 @@ void Player::UpdatePlayer(int dir) {
 
                 coords.first += 1;                
                 maze->maze_arr[coords.second][coords.first] = rep;
+                moves++;
             }
             break;
 
@@ -45,6 +47,7 @@ void Player::UpdatePlayer(int dir) {
 
                 coords.second += 1;
                 maze->maze_arr[coords.second][coords.first] = rep;
+                moves++;
             }
             break;
 
@@ -54,6 +57,7 @@ void Player::UpdatePlayer(int dir) {
 
                 coords.first -= 1;
                 maze->maze_arr[coords.second][coords.first] = rep;
+                moves++;
             }
             break;
 
@@ -72,6 +76,9 @@ void Player::UpdatePlayer(int dir) {
 
     system("cls");
     std::cout << *maze;
+
+    // Display number of moves
+    std::cout << "Moves: " << moves << std::endl;
 }
 
 // Check if player is at finish point

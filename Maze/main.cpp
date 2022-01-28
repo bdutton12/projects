@@ -1,4 +1,5 @@
 #include "player.cpp"
+#include <cctype>
 
 // Define ASCII values for each key press needed
 #define KEY_UP    72
@@ -7,23 +8,30 @@
 #define KEY_DOWN  80
 #define ESC 27
 
+// Global variables for whether first game and player char
+char player_char = 'A';
+bool first_game = true;
+
 int main() {
     // Initialize maze
+    system("color 08");
     Maze m = Maze(30,30);
     srand(time(0));
 
     m.GenerateMaze(1,1);
 
-    // Initialize game
-    char player_char;
-    std::string welcome_msg = "-------------------------\n"
-                            "WELCOME TO MAZE GENERATOR\n"
-                            "PLEASE ENTER A CHARACTER\n"
-                            "TO REPRESENT YOUR PLAYER\n"
-                            "-------------------------\n";
-    std::cout << welcome_msg << std::endl;
-    std::cout << "Character: ";
-    std::cin >> player_char;
+    // Initialize game if first game
+    if (first_game) {
+        std::string welcome_msg = "-------------------------\n"
+                                "WELCOME TO MAZE GENERATOR\n"
+                                "PLEASE ENTER A CHARACTER\n"
+                                "TO REPRESENT YOUR PLAYER\n"
+                                "-------------------------\n";
+        std::cout << welcome_msg << std::endl;
+        std::cout << "Character: ";
+        std::cin >> player_char;
+        first_game = false;
+    }
 
     // Initialize player and place on maze
     Player p = Player(1, 1, player_char, &m);
@@ -73,6 +81,15 @@ int main() {
             std::cout << "YOU WON | CONGRATULATIONS | YOU WON" << std::endl;
             std::cout << "-----------------------------------" << std::endl;
             not_quit = false;
+            char p_again = 'N';
+
+            // Ask to play again
+            std::cout << std::endl << "Play again? (Y/N): ";
+            std::cin >> p_again;
+            if (std::tolower(p_again) == 'y') {
+                system("cls");
+                main();
+            }
         }
     }
 
