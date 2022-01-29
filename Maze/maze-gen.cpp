@@ -77,6 +77,14 @@ void Maze::GenerateMaze(int x, int y) {
                 if (InBounds(x,y-2)) {
                     if (maze_arr[y-2][x] != ' '  && maze_arr[y-1][x] != ' ') {
                         maze_arr[y-1][x] = ' ';
+                        for (int i = 0; i < width; i++) {
+                            for (int j = 0; j < height; j++) {
+                                std::cout << maze_arr[i][j] << " ";
+                            }
+                            std::cout << std::endl;
+                        }
+                        Sleep(100);
+                        system("cls");
                         GenerateMaze(x,y-2);
                     }
                 }
@@ -85,6 +93,14 @@ void Maze::GenerateMaze(int x, int y) {
                 if (InBounds(x+2,y)) {
                     if (maze_arr[y][x+2] != ' ' && maze_arr[y][x+1] != ' ') {
                         maze_arr[y][x+1] = ' ';
+                        for (int i = 0; i < width; i++) {
+                            for (int j = 0; j < height; j++) {
+                                std::cout << maze_arr[i][j] << " ";
+                            }
+                            std::cout << std::endl;
+                        }
+                        Sleep(100);
+                        system("cls");
                         GenerateMaze(x+2,y);
                     }
                 }
@@ -93,6 +109,14 @@ void Maze::GenerateMaze(int x, int y) {
                 if (InBounds(x,y+2)) {
                     if (maze_arr[y+2][x] != ' ' && maze_arr[y+1][x] != ' ') {
                         maze_arr[y+1][x] = ' ';
+                        for (int i = 0; i < width; i++) {
+                            for (int j = 0; j < height; j++) {
+                                std::cout << maze_arr[i][j] << " ";
+                            }
+                            std::cout << std::endl;
+                        }
+                        Sleep(100);
+                        system("cls");
                         GenerateMaze(x,y+2);
                     }
                 }
@@ -101,6 +125,14 @@ void Maze::GenerateMaze(int x, int y) {
                 if (InBounds(x-2,y)) {
                     if (maze_arr[y][x-2] != ' ' && maze_arr[y][x-1] != ' ') {
                         maze_arr[y][x-1] = ' ';
+                        for (int i = 0; i < width; i++) {
+                            for (int j = 0; j < height; j++) {
+                                std::cout << maze_arr[i][j] << " ";
+                            }
+                            std::cout << std::endl;
+                        }
+                        Sleep(100);
+                        system("cls");
                         GenerateMaze(x-2,y);
                     }
                 }

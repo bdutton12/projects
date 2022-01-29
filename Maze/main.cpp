@@ -90,6 +90,7 @@ int main() {
 
     m.GenerateMaze(1,1);
 
+    /*
     // Initialize screen data
     const auto screen_size = GetScreenSize();
     SetConsoleScreenBufferSize(buffer_one, screen_size);
@@ -184,6 +185,6 @@ int main() {
             }
         }
     }
-
+    */
     return 0;
 }
